@@ -4,22 +4,28 @@ import "./MessageList.css";
 
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Avatar from "@material-ui/core/Avatar";
+import { Chip } from "@material-ui/core";
 
 const sample_messages = [
   {
     senderID: "khnguyen",
+    senderABV: "kn",
     text: "Hey, how's it going?"
   },
   {
     senderID: "pabuckland",
+    senderABV: "pb",
     text: "I am well. How about you?"
   },
   {
     senderID: "khnguyen",
+    senderABV: "kn",
     text: "Doing great, thanks! Would you like to play with my cat Ruffus?"
   },
   {
     senderID: "pabuckland",
+    senderABV: "pb",
     text: "OMG, yes!!"
   }
 ];
@@ -28,12 +34,12 @@ function MessageListRender() {
   let renderMessages = sample_messages.map((message, index) => {
     return (
       <div key={index} className="message">
-        <Col md={2} sm={12}>
-          <div className="sender-ID">{message.senderID}</div>
+        <Col md={1} sm={12} className="sender-chip-col">
+          <Chip className="sender-chip" label={message.senderABV} />
         </Col>
 
-        <Col md={10} sm={12}>
-          <div className="sender-text">{message.text}</div>
+        <Col md={11} sm={12} className="message-col">
+          <Chip className="message-text" label={message.text} variant="outlined" color="primary"/>
         </Col>
       </div>
     );

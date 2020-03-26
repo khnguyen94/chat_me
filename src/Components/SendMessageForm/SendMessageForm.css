@@ -7,15 +7,12 @@
 }
 
 #message-text {
-    height: 50px; 
-    width: 100%;
-    margin: auto;
-}∂
+}
 
 #submit-button-col {
 }
 
 #submit-button {
-    height: 50px; 
-    width: 100%;
+    height: 55px; 
+    width: 90%;
 }
