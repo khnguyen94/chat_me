@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import SendBird from "sendbird"; 
+import Jumbotron from "react-bootstrap/jumbotron";
+import MessageList from "./Components/MessageList/MessageList.js";
+import RoomList from "./Components/RoomList/RoomList.js";
+import NewRoomForm from "./Components/NewRoomForm/NewRoomForm.js";
+import SendMessageForm from "./Components/SendMessageForm/SendMessageForm.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+var sb = new SendBird({appId: "07A2D70F-9F26-486C-A5A7-2D964B5C74D3"});
+
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Jumbotron>
+          <h1>Chat Me</h1>
+
+          <hr />
+
+          <MessageList />
+        </Jumbotron>
+      </div>
+    );
+  }
 }
 
 export default App;
