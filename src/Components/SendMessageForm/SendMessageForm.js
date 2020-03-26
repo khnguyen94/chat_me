@@ -10,7 +10,7 @@ function SendMessageFormRender() {
   return (
     <div className="send-message-form">
       <Row className="new-message-row">
-        <Col sm={11} id="message-text-col">
+        <Col md={10} sm={12} id="message-text-col">
           <Form>
             <Form.Group controlId="message-text">
             <Form.Control type="text" placeholder="Message" />
@@ -18,7 +18,7 @@ function SendMessageFormRender() {
           </Form>
         </Col>
 
-        <Col sm={1} id="submit-button-col">
+        <Col md={2} sm={12} id="submit-button-col">
           <Button variant="primary" type="submit" id="submit-button">
             Submit
           </Button>

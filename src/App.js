@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import SendBird from "sendbird"; 
 import Dashboard from "./Components/Dashboard/Dashboard.js";
-import RoomList from "./Components/RoomList/RoomList.js";
+import RoomList from "./Components/TopicsList/TopicsList.js";
 import NewRoomForm from "./Components/NewRoomForm/NewRoomForm.js";
 import SendMessageForm from "./Components/SendMessageForm/SendMessageForm.js";
 
