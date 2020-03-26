@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import SendBird from "sendbird"; 
-import Jumbotron from "react-bootstrap/jumbotron";
-import MessageList from "./Components/MessageList/MessageList.js";
+import Dashboard from "./Components/Dashboard/Dashboard.js";
 import RoomList from "./Components/RoomList/RoomList.js";
 import NewRoomForm from "./Components/NewRoomForm/NewRoomForm.js";
 import SendMessageForm from "./Components/SendMessageForm/SendMessageForm.js";
@@ -13,13 +12,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Jumbotron>
-          <h1>Chat Me</h1>
-
-          <hr />
-
-          <MessageList />
-        </Jumbotron>
+        <Dashboard />
       </div>
     );
   }

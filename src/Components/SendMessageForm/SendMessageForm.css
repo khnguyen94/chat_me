@@ -1,0 +1,21 @@
+.new-message-row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#message-text-col {
+}
+
+#message-text {
+    height: 50px; 
+    width: 100%;
+    margin: auto;
+}∂
+
+#submit-button-col {
+}
+
+#submit-button {
+    height: 50px; 
+    width: 100%;
+}
