@@ -16,13 +16,11 @@ import { Button } from "@material-ui/core";
 import Icon from "@material-ui/core/Icon";
 
 function SendMessageFormRender() {
-  const [values, setValues] = React.useState({
+  const [message, updateMessage] = React.useState({
     message: ""
   });
 
-  const handleChange = prop => event => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
+  const updateMessage = (event) => setMessage(event.target.value);
 
   return (
     <div className="send-message-form">
@@ -34,6 +32,8 @@ function SendMessageFormRender() {
               id="message-text"
               label="Message"
               variant="outlined"
+              value={message}
+              onChange={updateMessage}
             />
           </form>
         </Col>
