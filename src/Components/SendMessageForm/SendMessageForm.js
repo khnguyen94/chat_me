@@ -20,7 +20,7 @@ function SendMessageFormRender() {
     message: ""
   });
 
-  const updateMessage = (event) => setMessage(event.target.value);
+  const [textValue, changeTextValue] = React.useState("");
 
   return (
     <div className="send-message-form">
@@ -32,8 +32,8 @@ function SendMessageFormRender() {
               id="message-text"
               label="Message"
               variant="outlined"
-              value={message}
-              onChange={updateMessage}
+              value={textValue}
+              onChange={event => changeTextValue(event.target.value)}
             />
           </form>
         </Col>

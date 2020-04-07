@@ -9,7 +9,17 @@ import TopicsList from "../TopicsList/TopicsList.js";
 import MessageList from "../MessageList/MessageList.js";
 import SendMessageForm from "../SendMessageForm/SendMessageForm.js";
 
+import { CTX } from "../Store/Store.js"; 
+
 function DashboardRender() {
+
+  // CTX store
+  const [allChats] = React.useContext(CTX); 
+
+  console.log({allChats});
+
+  const [textValue, changeTextValue] = React.useState("");
+
   return (
     <div className="dashboard">
       <Jumbotron>
