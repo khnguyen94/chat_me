@@ -6,42 +6,16 @@ import Col from "react-bootstrap/Col";
 import Tab from "react-bootstrap/Tab";
 import { MenuList, MenuItem, Divider } from "@material-ui/core";
 
-const sample_topics = [
-  {
-    topicID: "1",
-    topicName: "Nike"
-  },
-  {
-    topicID: "2",
-    topicName: "Jordan"
-  },
-  {
-    topicID: "3",
-    topicName: "Adidas"
-  },
-  {
-    topicID: "4",
-    topicName: "Naked & Famous"
-  },
-  {
-    topicID: "5",
-    topicName: "Balenciaga"
-  },
-  {
-    topicID: "6",
-    topicName: "Patagonia"
-  },
-  {
-    topicID: "7",
-    topicName: "Gucci"
-  }
-];
+import {DashboardRender} from "../Dashboard/Dashboard.js";
 
-function TopicsListRender() {
-  let renderTopicsList = sample_topics.map((topic, index) => {
+function TopicsListRender(props) {
+
+  console.log(props);
+
+  let renderTopicsList = props.topics.map((topic, index) => {
     return (
-      <div>
-        <MenuItem>{topic.topicName}</MenuItem>
+      <div key={index}>
+        <MenuItem>{topic}</MenuItem>
         <Divider />
       </div>
     );

@@ -31,7 +31,7 @@ function SendMessageFormRender() {
               fullWidth
               id="message-text"
               label="Message"
-              variant="outlined"
+              variant="outlined" 
               value={textValue}
               onChange={event => changeTextValue(event.target.value)}
             />
@@ -44,7 +44,7 @@ function SendMessageFormRender() {
             variant="contained"
             color="primary"
             endIcon={<Icon>send</Icon>}
-          ></Button>
+          >Send</Button>
         </Col>
       </Row>
     </div>

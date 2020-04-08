@@ -6,43 +6,67 @@ import React from "react";
 
 export const CTX = React.createContext();
 
+// const sample_messages = [
+//   {
+//     senderID: "khnguyen",
+//     senderABV: "kn",
+//     text: "Hey, how's it going?"
+//   },
+//   {
+//     senderID: "pabuckland",
+//     senderABV: "pb",
+//     text: "I am well. How about you?"
+//   },
+//   {
+//     senderID: "khnguyen",
+//     senderABV: "kn",
+//     text: "Doing great, thanks! Would you like to play with my cat Ruffus?"
+//   },
+//   {
+//     senderID: "pabuckland",
+//     senderABV: "pb",
+//     text: "OMG, yes!!"
+//   }
+// ];
+
 const initState = {
-  general: [
-    {topic: "general", from: "John", msg: "hi"}, 
-    {topic: "general", from: "Joseph", msg: "hi"}, 
-    {topic: "general", from: "Vanessa", msg: "hi"} 
+  General: [
+    {topic: "general", senderID: "khnguyen", senderInitials: "kn", msg: "Hey, how's it going?"}, 
+    {topic: "general", senderID: "pbuckland", senderInitials: "pb", msg: "I am well. How about you?"}, 
+    {topic: "general", senderID: "khnguyen", senderInitials: "kn", msg: "Doing great, thanks! Would you like to play with my cat Ruffus?"}, 
+    {topic: "general", senderID: "pbuckland", senderInitials: "pb", msg: "OMG, yes!!"} 
   ], 
-  nike: [
+  Nike: [
     {topic: "nike", from: "Tom", msg: "hi"}, 
     {topic: "nike", from: "Colin", msg: "hi"}, 
     {topic: "nike", from: "Chris", msg: "hi"} 
   ], 
-  jordan: [
+  Jordan: [
     {topic: "jordan", from: "Jill", msg: "hi"}, 
     {topic: "jordan", from: "Jamie", msg: "hi"}, 
     {topic: "jordan", from: "Carl", msg: "hi"} 
   ], 
-  adidas: [
+  Adidas: [
     {topic: "adidas", from: "Tom", msg: "hi"}, 
     {topic: "adidas", from: "Colin", msg: "hi"}, 
     {topic: "adidas", from: "Chris", msg: "hi"} 
   ], 
-  nakedfamous: [
+  Levis : [
     {topic: "nakedfamous", from: "Tom", msg: "hi"}, 
     {topic: "nakedfamous", from: "Colin", msg: "hi"}, 
     {topic: "nakedfamous", from: "Chris", msg: "hi"} 
   ], 
-  balenciaga: [
+  Balenciaga: [
     {topic: "balenciaga", from: "Tom", msg: "hi"}, 
     {topic: "balenciaga", from: "Colin", msg: "hi"}, 
     {topic: "balenciaga", from: "Chris", msg: "hi"} 
   ], 
-  patagonia: [
+  Patagonia: [
     {topic: "patagonia", from: "Tom", msg: "hi"}, 
     {topic: "patagonia", from: "Colin", msg: "hi"}, 
     {topic: "patagonia", from: "Chris", msg: "hi"} 
   ], 
-  gucci: [
+  Gucci: [
     {topic: "gucci", from: "Tom", msg: "hi"}, 
     {topic: "gucci", from: "Colin", msg: "hi"}, 
     {topic: "gucci", from: "Chris", msg: "hi"} 
@@ -51,7 +75,7 @@ const initState = {
 
 function reducer(state, action) {
 
-  const {from, msg, topic} = action.payload;
+  const {topic, senderID, senderInitials, msg} = action.payload;
 
   switch (action.type) {
     case "RECEIVE_MESSAGE":
@@ -60,7 +84,9 @@ function reducer(state, action) {
           [topic]: [
             ...state[topic], 
             {
-              from, 
+              topic, 
+              senderID,
+              senderInitials, 
               msg
             }
           ]

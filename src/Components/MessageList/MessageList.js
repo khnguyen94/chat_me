@@ -30,7 +30,8 @@ const sample_messages = [
   }
 ];
 
-function MessageListRender() {
+function MessageListRender(props) {
+
   let renderMessages = sample_messages.map((message, index) => {
     return (
       <div key={index} className="message">
